@@ -1,11 +1,9 @@
-import logoImage from "./assets/logo.svg";
+import { Link } from "react-router-dom";
+import logoImage from "../../assets/logo.svg";
 // import Todo from "./Todo";
 // import { IBanking } from "./IBanking";
 
-import "./App.css";
-import { Link } from "react-router-dom";
-
-function App() {
+function Home() {
   return (
     <main id="page">
       <div>
@@ -24,12 +22,10 @@ function App() {
         </p>
         <ul className="buttons">
           <li>
-           ç
-            {/* <a href="#">TO-DO LIST</a> */}
+            <Link to="/todo">TO-DO LIST</Link>
           </li>
           <li>
             <Link to="/login">IBANKING</Link>
-            <a href="#">IBANKING</a>
           </li>
         </ul>
       </div>
@@ -37,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

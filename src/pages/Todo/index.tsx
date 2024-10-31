@@ -1,6 +1,6 @@
 import { useState, useEffect, ChangeEvent } from "react";
 
-import logoImage from "../assets/logo.svg";
+import logoImage from "../../assets/logo.svg";
 import { TODO_LIST } from "./initial-state";
 import { ITodoTypes } from "./types";
 
@@ -27,7 +27,7 @@ function Todo() {
       if (item.id !== id) {
         editedItems.push(item);
       }
-    })
+    });
 
     setItems(editedItems);
   };
@@ -82,7 +82,7 @@ function Todo() {
             <input
               id="search"
               placeholder="busca por texto..."
-              value={searchValue}
+              value={searchInputValue}
               onChange={handleChange}
             />
             <button type="submit">buscar</button>
@@ -94,47 +94,45 @@ function Todo() {
                 &#128533;
               </span>
             )}
-            {items.map((item, i) => {
-              return (
-                <li>
-                  <span>
-                    {i}
-                    {item.required ? "*" : ""}.
-                  </span>
-                  <div className="todo__content">
-                    <h3>
-                      {item.title}
-                      <span data-type={item.status}>{item.status}</span>
-                    </h3>
-                    <p>{item.description}</p>
-                    {item.links && item.links.length > 0 && (
-                      <div className="todo__links">
-                        {item.links.map((link) => (
-                          <a key={link.name} target="_blank" href={link.url}>
-                            {link.name}
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                    <div className="todo__actions">
-                      <button onClick={() => handleDeleteTask(item.uuid)}>
-                        delete
-                      </button>
-                      <button
-                        onClick={() =>
-                          handleChangeTaskStatus(item.id, item.status)
-                        }
-                      >
-                        change to{" "}
-                        <strong>
-                          <u>{item.status === "done" ? "pending" : "done"}</u>
-                        </strong>
-                      </button>
+            {items.map((item, i) => (
+              <li>
+                <span>
+                  {i}
+                  {item.required ? "*" : ""}.
+                </span>
+                <div className="todo__content">
+                  <h3>
+                    {item.title}
+                    <span data-type={item.status}>{item.status}</span>
+                  </h3>
+                  <p>{item.description}</p>
+                  {item.links && item.links.length > 0 && (
+                    <div className="todo__links">
+                      {item.links.map((link) => (
+                        <a key={link.name} target="_blank" href={link.url}>
+                          {link.name}
+                        </a>
+                      ))}
                     </div>
-                  <div>
-                </li>
-              );
-            })}
+                  )}
+                  <div className="todo__actions">
+                    <button onClick={() => handleDeleteTask(item.uuid)}>
+                      delete
+                    </button>
+                    <button
+                      onClick={() =>
+                        handleChangeTaskStatus(item.id, item.status)
+                      }
+                    >
+                      change to{" "}
+                      <strong>
+                        <u>{item.status === "done" ? "pending" : "done"}</u>
+                      </strong>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
