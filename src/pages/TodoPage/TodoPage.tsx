@@ -32,7 +32,8 @@ export function TodoPage() {
   };
 
   const handleChangeTaskStatus = (id: string, status: ITodoTypes) => {
-    const reversedStatus: ITodoTypes = status === "pending" ? "done" : "pending";
+    const reversedStatus: ITodoTypes =
+      status === "pending" ? "done" : "pending";
 
     const editedItems = items.map((item) => {
       if (item.id === id) {

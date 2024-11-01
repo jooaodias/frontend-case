@@ -2,11 +2,14 @@ import { useState, ChangeEvent } from "react";
 import logoFullImage from "../../../assets/logo-full.svg";
 import arrowRightImage from "../../../assets/arrow-right.svg";
 import "./login.css";
-import { loginEndpoint } from "../../../shared/services/endpoints";
+import { loginEndpoint } from "../../../shared/api/resources";
+import { useAuthUser } from "../../../shared/providers";
+import { getUserInfo } from "../../../shared/utils";
 
 function Login() {
   const [cpf, setCpf] = useState("");
   const [password, setPassword] = useState("");
+  const { setLoggedUser, loggedUser } = useAuthUser();
 
   const handleChangeCPF = (e: ChangeEvent<HTMLInputElement>) => {
     setCpf(e.target.value);
@@ -15,18 +18,17 @@ function Login() {
   const handleChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
+  console.log(loggedUser);
 
   const handleAuth = async () => {
     try {
       const response = await loginEndpoint(cpf, password);
-      return response.token;
+      const userDecoded = getUserInfo(response.token);
+      localStorage.setItem("token", response.token);
+      setLoggedUser(userDecoded);
     } catch (error) {
       console.log(error);
     }
-
-    const response = await loginEndpoint(cpf, password);
-    const data = response.token;
-    console.log(data);
   };
 
   return (

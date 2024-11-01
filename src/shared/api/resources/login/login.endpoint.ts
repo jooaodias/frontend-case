@@ -1,4 +1,4 @@
-import appAxios from "../../Axios/appAxios";
+import appAxios from "../../axios/appAxios";
 
 export const loginEndpoint = async (
   cpf: string,
