@@ -1,6 +1,4 @@
 import logoImage from "./assets/logo.svg";
-// import Todo from "./Todo";
-// import { IBanking } from "./IBanking";
 
 import "./App.css";
 import { Link } from "react-router-dom";
