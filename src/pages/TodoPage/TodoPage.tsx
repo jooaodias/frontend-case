@@ -1,11 +1,12 @@
 import { useState, ChangeEvent, useMemo } from "react";
 
 import logoImage from "../../assets/logo.svg";
-import { TODO_LIST } from "./initial-state";
 import { ITodoItem, ITodoTypes } from "./TodoPage.types";
 
 import "./index.css";
 import { TodoItem } from "./components/TodoItem/TodoItem";
+import { TODO_LIST } from "./utils";
+import { Link } from "react-router-dom";
 
 export function TodoPage() {
   const [items, setItems] = useState<ITodoItem[]>(TODO_LIST);
@@ -50,7 +51,9 @@ export function TodoPage() {
   return (
     <main id="page" className="todo">
       <div>
-        <img src={logoImage} alt="Cora" title="Cora"></img>
+        <Link to="/">
+          <img src={logoImage} alt="Cora" title="Cora" />
+        </Link>
         <h1>Weekly to-do list &#128467;</h1>
         <h2>
           Bem-vindo ao nosso produto <i>fake</i> de <strong>to-do</strong> list

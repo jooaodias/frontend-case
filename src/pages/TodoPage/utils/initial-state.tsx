@@ -1,4 +1,4 @@
-import { ITodoItem } from "./TodoPage.types";
+import { ITodoItem } from "../TodoPage.types";
 
 export const TODO_LIST: ITodoItem[] = [
   {

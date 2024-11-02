@@ -18,6 +18,21 @@
     {
       "items": [
         {
+          "id": "asdasdasdasd",
+          "description": "Compras",
+          "label": "Reembolso",
+          "entry": "DEBIT",
+          "amount": 80000,
+          "name": "Cora digital",
+          "dateEvent": "2024-02-01T10:15:17Z",
+          "status": "REVERSAL"
+        }
+      ],
+      "date": "2024-02-01"
+    },
+    {
+      "items": [
+        {
           "id": "uvw987rst654xyz321",
           "description": "Assinatura mensal",
           "label": "Débito automático",

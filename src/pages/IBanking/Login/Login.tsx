@@ -6,7 +6,7 @@ import { loginEndpoint } from "../../../shared/api/resources";
 import { useAuthUser } from "../../../shared/providers";
 import { getUserInfo } from "../../../shared/utils";
 
-function Login() {
+export function Login() {
   const [cpf, setCpf] = useState("");
   const [password, setPassword] = useState("");
   const { setLoggedUser } = useAuthUser();
@@ -48,4 +48,3 @@ function Login() {
   );
 }
 
-export { Login };

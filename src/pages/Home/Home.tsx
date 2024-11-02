@@ -25,7 +25,7 @@ function Home() {
             <Link to="/todo">TO-DO LIST</Link>
           </li>
           <li>
-            <Link to="/login">IBANKING</Link>
+            <Link to="/banking">IBANKING</Link>
           </li>
         </ul>
       </div>
