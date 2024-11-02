@@ -28,7 +28,6 @@ export function TodoPage() {
   const handleDeleteTask = (id: string) => {
     const newItems = items.filter((item) => item.id !== id);
     setItems(newItems);
-    console.log(newItems);
   };
 
   const handleChangeTaskStatus = (id: string, status: ITodoTypes) => {

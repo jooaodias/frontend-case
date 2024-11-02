@@ -9,7 +9,7 @@ export const AppRoutes: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/todo" element={<TodoPage />} />
-        <Route path="/login" element={<IBanking />} />
+        <Route path="/banking" element={<IBanking />} />
       </Routes>
     </BrowserRouter>
   );

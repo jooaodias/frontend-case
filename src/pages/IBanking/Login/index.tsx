@@ -9,7 +9,7 @@ import { getUserInfo } from "../../../shared/utils";
 function Login() {
   const [cpf, setCpf] = useState("");
   const [password, setPassword] = useState("");
-  const { setLoggedUser, loggedUser } = useAuthUser();
+  const { setLoggedUser } = useAuthUser();
 
   const handleChangeCPF = (e: ChangeEvent<HTMLInputElement>) => {
     setCpf(e.target.value);
@@ -18,7 +18,6 @@ function Login() {
   const handleChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
-  console.log(loggedUser);
 
   const handleAuth = async () => {
     try {

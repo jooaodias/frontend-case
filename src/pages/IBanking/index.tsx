@@ -1,7 +1,15 @@
+import { useAuthUser } from "../../shared/providers";
 import { Login } from "./Login";
+import { Transaction } from "./Transaction";
 
 function IBanking() {
-  return <Login />;
+  const {loggedUser} = useAuthUser();
+
+  if (!loggedUser) {
+    return <Login />;
+  }
+
+  return <Transaction />;
 }
 
 export { IBanking };
