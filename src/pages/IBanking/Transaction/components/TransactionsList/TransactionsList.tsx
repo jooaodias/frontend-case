@@ -22,7 +22,7 @@ export const TransactionsList = ({
               <span className="font-extrabold">
                 {amountFormatter(
                   groupedTransactions[date].reduce((total, item) => {
-                    if (item.status === "REVERSAL") {
+                    if (item.status === "REFUND") {
                       return total;
                     }
                     if (item.entry === "CREDIT") {

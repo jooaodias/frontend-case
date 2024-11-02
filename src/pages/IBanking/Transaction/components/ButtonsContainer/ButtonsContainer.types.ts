@@ -1,4 +1,4 @@
-export interface IButtonsFilterProps {
+export interface IButtonsContainerProps {
   handleModeEntry: (mode: string) => void;
   modeEntry: string;
 }

@@ -1,5 +1,6 @@
 import { IResponseItem } from "../../../../../shared/models";
 import { amountFormatter, dateWithHourFormatter } from "../../utils/utils";
+import { Icon } from "../Icon";
 
 interface ITransactionItemProps {
   transaction: IResponseItem;
@@ -7,15 +8,15 @@ interface ITransactionItemProps {
 
 export const TransactionItem = ({ transaction }: ITransactionItemProps) => {
   const isCredit = transaction.entry === "CREDIT";
-  const isReversal = transaction.status === "REVERSAL";
+  const isRefund = transaction.status === "REFUND";
   return (
     <div key={transaction.id} className="flex flex-row w-full">
       <div
-        className={`basis-1/4 ${
+        className={`basis-1/4 flex gap-4 ${
           isCredit ? "text-blue-primary" : "text-active"
         }`}
       >
-        Icon {transaction.name}
+        <Icon entry={isRefund ? "REFUND" : transaction.entry}/> {transaction.name}
       </div>
       <div className="text-gray basis-1/4">{transaction.label}</div>
 
@@ -27,10 +28,10 @@ export const TransactionItem = ({ transaction }: ITransactionItemProps) => {
         className={`font-extrabold basis-1/4 text-end ${
           isCredit ? "text-blue-primary" : "text-active "
         }
-          ${isReversal && "line-through"}
+          ${isRefund && "line-through"}
           `}
       >
-        {!isReversal ? isCredit ? "+ " : "- " : ''}
+        {!isRefund ? isCredit ? "+ " : "- " : ''}
         {amountFormatter(transaction.amount)}
       </div>
     </div>

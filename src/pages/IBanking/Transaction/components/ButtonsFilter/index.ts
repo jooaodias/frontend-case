@@ -1,1 +1,0 @@
-export { ButtonsFilter } from "./ButtonsFilter";

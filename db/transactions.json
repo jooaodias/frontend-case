@@ -25,7 +25,7 @@
           "amount": 80000,
           "name": "Cora digital",
           "dateEvent": "2024-02-01T10:15:17Z",
-          "status": "REVERSAL"
+          "status": "REFUND"
         }
       ],
       "date": "2024-02-01"

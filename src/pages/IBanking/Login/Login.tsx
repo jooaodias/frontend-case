@@ -37,6 +37,7 @@ export function Login() {
       <input id="cpf" placeholder="Insira seu CPF" onChange={handleChangeCPF} />
       <input
         id="password"
+        type="password"
         placeholder="Digite sua senha"
         onChange={handleChangePassword}
       />

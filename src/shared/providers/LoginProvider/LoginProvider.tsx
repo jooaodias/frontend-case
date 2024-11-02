@@ -28,8 +28,11 @@ export const UserContextProvider: React.FC<{ children: ReactNode }> = ({
   }, []);
 
   const logout = () => {
-    setLoggedUser(null);
-    localStorage.clear();
+    setTimeout(() => {
+      setLoggedUser(null);
+      localStorage.clear();
+    }, 1000);
+    alert("Logout realizado com sucesso!");
   };
 
   const providerValue = useMemo<IUserContext>(

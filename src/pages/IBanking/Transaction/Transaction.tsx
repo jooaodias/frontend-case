@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTransactionList } from "./hooks";
 import { filterByDate } from "./utils/utils";
-import { ButtonsFilter } from "./components";
+import { ButtonsContainer } from "./components";
 import { TransactionsList } from "./components/TransactionsList";
 
 export const Transaction = () => {
@@ -27,8 +27,8 @@ export const Transaction = () => {
 
   return (
     <div className="flex flex-col mt-6 w-3/5 justify-items-center mx-auto">
-      <ButtonsFilter handleModeEntry={handleModeEntry} modeEntry={modeEntry} />
-
+      <ButtonsContainer handleModeEntry={handleModeEntry} modeEntry={modeEntry} />
+    
       <TransactionsList groupedTransactions={groupedTransactions} />
     </div>
   );
