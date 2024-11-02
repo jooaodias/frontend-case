@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from "../../pages/Home/Home";
-import { TodoPage, IBanking } from "../../pages";
+import { TodoPage, IBanking, Home } from "../../pages";
 
 export const AppRoutes: React.FC = () => {
   return (

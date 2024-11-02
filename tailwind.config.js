@@ -20,7 +20,7 @@ module.exports = {
         'lighter-gray': '#f0f4f8',
         'error': '#ee3636',
         'success': '#04aa6d',
-        
+        'bg-black': '#00000005'
       }
     },
   },
